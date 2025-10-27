@@ -2,7 +2,7 @@
 
 Launcher for Cold Fear (2005 game by Darkworks) which backs up save games on exit.
 
-To use rename the existing game executable to `coldfear_retail.exe` to `coldfear_game.exe`, build this executable with make and make sure you have [7-Zip](https://www.7-zip.org) (specifically the `7z` CLI executable) and [copyparty_sync](https://github.com/stpettersens/copyparty_sync) configured and on your system PATH variable.
+To use: rename the existing game executable to `coldfear_retail.exe` to `coldfear_game.exe`, build this executable with make and make sure you have [7-Zip](https://www.7-zip.org) (specifically the `7z` CLI executable) and [copyparty_sync](https://github.com/stpettersens/copyparty_sync) configured and on your system PATH variable.
 
 Build requires:
 
