@@ -11,6 +11,7 @@
 
 import std.stdio;
 import std.process;
+import core.thread;
 
 void print_title() {
     string[] lines = [
@@ -26,7 +27,7 @@ void print_title() {
         r"  \_____\____/|______|_____/  |_|    |______/_/    \_\_|  \_\",
         r"",
         r"",
-        r"Unoffical Launcher by Sam Saint-Pettersen (v0.1.0)",
+        r"Unoffical Launcher by Sam Saint-Pettersen (v0.2.0)",
         r"",
         r""
     ];
@@ -36,7 +37,7 @@ void print_title() {
     }
 }
 
-int main() {
+int main(string[] args) {
     int exit_code = -1;
     print_title();
     writeln("Launching game executable...");
@@ -56,6 +57,13 @@ int main() {
 
     }
     else writeln("FAILED to execute game.");
+
+    if (game.status == 0 && args.length > 1 && (args[1] == "-c" || args[1] == "--countdown")) {
+        writeln("Exiting in 5 seconds...");
+        Thread.sleep(dur!("seconds")(5));
+        return exit_code;
+    }
+
     write("Press any key to continue.");
     char c;
     readf("%c", &c);
